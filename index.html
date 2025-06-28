@@ -53,7 +53,7 @@
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&family=Oswald:wght@700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
@@ -79,8 +79,13 @@
             100% { background-position: 100% 100%; }
         }
 
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif; /* Elegant font for headings */
+        h1 {
+            font-family: 'Oswald', sans-serif; /* New, professional font for main heading */
+            text-shadow: 0 0 10px rgba(255,255,255,0.8), 0 0 20px rgba(0,0,0,0.3); /* Subtle white glow with soft shadow */
+        }
+
+        h2, h3 {
+            font-family: 'Playfair Display', serif; /* Elegant font for other headings */
         }
         .hero-section {
             background-image: url('images/performance.jpg'); /* Your hero image */
@@ -104,9 +109,6 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-        }
-        .hero-title-shadow {
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 255, 255, 0.6); /* Glowing text effect */
         }
         .btn-primary {
             background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%); /* Purple to blue gradient */
@@ -245,7 +247,7 @@
     <section class="hero-section text-white relative">
         <div class="hero-overlay"></div>
         <div class="z-10 p-4 max-w-4xl">
-            <h1 class="text-5xl md:text-7xl font-bold mb-4 leading-tight hero-title-shadow">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 leading-tight">
                 <span class="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-orange-500">DEBARAG DAS</span>
             </h1>
             <p class="text-xl md:text-3xl font-light mb-8">
@@ -471,7 +473,12 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8 text-center w-full">
         <div class="container mx-auto px-4">
-            <p>© <span id="current-year"></span> DEBARAG DAS. All rights reserved.</p>
+            <!-- DEBAWAVES Production Brand -->
+            <div class="mb-4">
+                <img src="images/my production logo.png" alt="DEBAWAVES Production Logo" class="h-10 mx-auto mb-2">
+                <p class="text-lg font-semibold text-gray-200">A DEBAWAVES Production</p>
+            </div>
+            <p>&copy; <span id="current-year"></span> DEBARAG DAS. All rights reserved.</p>
             <p class="text-sm mt-2">Designed with passion from Majuli, Assam.</p>
         </div>
     </footer>
