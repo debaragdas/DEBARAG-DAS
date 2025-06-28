@@ -58,8 +58,12 @@
         body {
             font-family: 'Montserrat', sans-serif;
             color: #333;
-            /* Ultra-professional background: Elegant radial gradient */
-            background: radial-gradient(circle at center, #f0f9ff, #dbeafe, #bfdbfe, #93c5fd, #60a5fa); /* Soft blues */
+            /* Ultimate professional background: Complex radial gradient + subtle animated pattern */
+            background: radial-gradient(circle at center, #f0f9ff, #dbeafe, #bfdbfe, #93c5fd, #60a5fa); /* Base soft blues */
+            background-image: 
+                radial-gradient(circle at top left, #a78bfa 0%, #8b5cf6 25%, #6a11cb 50%, #2575fc 75%, #00c6ff 100%), /* Artistic color blend */
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zm12 12V8h-2v4h-4v2h4v4h2v-4h4v-2h-4zM0 36v-2h4v-4h2v4h4v2H6v4H4v-4H0zm0-36V0h2v4h4v2H6v4H4V6H0zm12 36v-2h4v-4h2v4h4v2h-4v4h-2v-4h-4zm-6 0v-2H4v-4H2v4H0v2h2v4h2v-4h2zm30 0v-2h4v-4h2v4h4v2h-4v4h-2v-4h-4zM12 0v-2h4v-4h2v4h4v2h-4v4h-2v-4h-4zM24 24v-2h4v-4h2v4h4v2h-4v4h-2v-4h-4zm0 12v-2h4v-4h2v4h4v2h-4v4h-2v-4h-4zM24 0v-2h4v-4h2v4h4v2h-4v4h-2v-4h-4zM48 0v-2h4v-4h2v4h4v2h-4v4h-2v-4h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-blend-mode: overlay, normal; /* Blend pattern over gradient */
             background-attachment: fixed; 
             min-height: 100vh;
             display: flex;
@@ -67,7 +71,14 @@
             align-items: center;
             justify-content: flex-start; 
             padding-top: 5rem; /* Space for fixed header */
+            animation: backgroundShift 60s linear infinite alternate; /* Slow, subtle background animation */
         }
+
+        @keyframes backgroundShift {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+
         h1, h2, h3 {
             font-family: 'Playfair Display', serif; /* Elegant font for headings */
         }
@@ -75,7 +86,7 @@
             background-image: url('images/performance.jpg'); /* Your hero image */
             background-size: cover;
             background-position: center;
-            height: 85vh; /* Slightly taller hero */
+            height: 85vh; 
             width: 100%; 
             display: flex;
             align-items: center;
@@ -83,10 +94,10 @@
             text-align: center;
             position: relative;
             z-index: 1;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3); /* Stronger shadow for hero */
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4); /* Stronger shadow for hero */
         }
         .hero-overlay {
-            background-color: rgba(0, 0, 0, 0.6); /* Slightly darker overlay for text readability */
+            background-color: rgba(0, 0, 0, 0.65); /* Slightly darker overlay for text readability */
             position: absolute;
             top: 0;
             left: 0;
@@ -94,45 +105,53 @@
             height: 100%;
             z-index: -1;
         }
+        .hero-title-shadow {
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 255, 255, 0.6); /* Glowing text effect */
+        }
         .btn-primary {
             background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%); /* Purple to blue gradient */
             transition: all 0.3s ease-in-out;
             background-size: 200% auto;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
         }
         .btn-primary:hover {
             background-position: right center;
-            transform: translateY(-4px) scale(1.02); /* Lift and slightly enlarge more */
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+            transform: translateY(-5px) scale(1.03); /* More pronounced lift and enlarge */
+            box-shadow: 0 18px 35px rgba(0, 0, 0, 0.35); /* Even stronger shadow */
         }
         .section-heading {
             position: relative;
             display: inline-block;
-            margin-bottom: 2rem;
-            color: #333; /* Darker heading color for contrast */
+            margin-bottom: 2.5rem; /* More space below heading */
+            color: #2a2a2a; /* Slightly darker heading color for contrast */
         }
         .section-heading::after {
             content: '';
             position: absolute;
             left: 50%;
-            bottom: -10px;
+            bottom: -12px; /* Lower underline */
             transform: translateX(-50%);
-            width: 80px; /* Wider underline */
-            height: 5px; /* Thicker underline */
+            width: 100px; /* Even wider underline */
+            height: 6px; /* Thicker underline */
             background: linear-gradient(to right, #6a11cb, #2575fc);
-            border-radius: 2.5px;
+            border-radius: 3px;
         }
 
         /* Card styles for music, videos, gallery */
         .card {
             background-color: #ffffff;
-            border-radius: 1rem; /* More rounded corners */
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 1.25rem; /* Even more rounded corners */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12); /* Softer, deeper shadow */
             transition: all 0.3s ease-in-out;
-            overflow: hidden; /* Ensure content stays within card */
+            overflow: hidden; 
+            background-image: linear-gradient(to bottom right, #ffffff, #f0f9ff); /* Subtle card gradient */
         }
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            transform: translateY(-8px); /* More pronounced lift */
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2); /* Deeper shadow on hover */
+        }
+        .card img {
+            border-radius: 1rem; /* Match card border radius */
         }
 
         /* Modal/Lightbox Styles */
@@ -142,14 +161,14 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: rgba(0, 0, 0, 0.95); /* Darker overlay */
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 1000;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+            transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
         }
         .modal-overlay.active {
             opacity: 1;
@@ -157,8 +176,8 @@
         }
         .modal-content {
             position: relative;
-            max-width: 90%;
-            max-height: 90%;
+            max-width: 95%; /* Larger modal content */
+            max-height: 95%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -167,26 +186,26 @@
             max-width: 100%;
             max-height: 100%;
             object-fit: contain; 
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-radius: 12px; /* More rounded image in modal */
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6); /* Stronger modal shadow */
         }
         .modal-close-btn {
             position: absolute;
-            top: 15px;
-            right: 15px;
-            background: none;
+            top: 20px; /* Further from edge */
+            right: 20px; /* Further from edge */
+            background: rgba(255, 255, 255, 0.3); /* More visible background */
             border: none;
-            font-size: 2.5rem;
+            font-size: 3rem; /* Larger close button */
             color: white;
             cursor: pointer;
             z-index: 1001;
-            padding: 5px 10px;
+            padding: 8px 16px; /* Larger padding */
             border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.2);
-            transition: background-color 0.2s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
         .modal-close-btn:hover {
-            background-color: rgba(255, 255, 255, 0.4);
+            background-color: rgba(255, 255, 255, 0.5);
+            transform: rotate(90deg); /* Rotate on hover */
         }
     </style>
 </head>
@@ -226,13 +245,13 @@
     <section class="hero-section text-white relative">
         <div class="hero-overlay"></div>
         <div class="z-10 p-4 max-w-4xl">
-            <h1 class="text-5xl md:text-7xl font-bold mb-4 leading-tight">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 leading-tight hero-title-shadow">
                 <span class="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-orange-500">DEBARAG DAS</span>
             </h1>
             <p class="text-xl md:text-3xl font-light mb-8">
                 Independent Singer, Songwriter & Music Producer from Majuli, Assam
             </p>
-            <a href="#music" class="btn-primary text-white font-semibold py-4 px-10 rounded-full shadow-lg text-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-purple-300">
+            <a href="#music" class="btn-primary text-white font-semibold py-4 px-10 rounded-full text-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-purple-300">
                 Listen to Music
             </a>
         </div>
@@ -278,7 +297,7 @@
                     <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3XoU51xxhY3Fje7naz3HU1?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 </div>
                 <p class="text-lg text-gray-700 mt-6">Listen to "Rod aji keni pau - Cover Song," available now on Spotify and all major streaming platforms!</p>
-                <a href="https://open.spotify.com/track/3XoU51xxhY3Fje7naz3HU1?si=DVofzT_hRf-u4V2aLklUeQ" target="_blank" rel="noopener noreferrer" class="btn-primary text-white font-semibold py-3 px-8 rounded-full shadow-lg text-base mt-6">
+                <a href="https://open.spotify.com/track/3XoU51xxhY3Fje7naz3HU1?si=DVofzT_hRf-u4V2aLklUeQ" target="_blank" rel="noopener noreferrer" class="btn-primary text-white font-semibold py-3 px-8 rounded-full text-base mt-6">
                     Stream Now
                 </a>
             </div>
