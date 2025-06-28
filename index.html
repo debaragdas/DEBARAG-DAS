@@ -8,16 +8,18 @@
     <meta name="keywords" content="Debarag Das, Deba Mohan Das, singer, songwriter, music composer, independent artist, Majuli, Assam, Assamese music, Indian singer, Hindi pop, contemporary Indian melodies, official website, music artist, performer, Guwahati, musical journey">
     <meta name="author" content="DEBARAG DAS">
 
+    <!-- Favicon - A simple 'DD' icon for Debarag Das -->
     <link rel="icon" href="https://placehold.co/32x32/6A11CB/FFFFFF?text=DD" type="image/png"> 
 
+    <!-- Schema Markup (JSON-LD) for SEO - Tells search engines directly about you as an artist -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": ["Person", "MusicArtist"],
       "name": "DEBARAG DAS",
       "alternateName": "Deba Mohan Das",
-      "url": "https://debaragdas.github.io/DEBARAG-DAS/", // IMPORTANT: This URL should be your actual live URL.
-      "image": "images/portrait.jpg", // Your profile picture
+      "url": "https://debaragdas.github.io/DEBARAG-DAS/", 
+      "image": "images/portrait.jpg", 
       "birthDate": "2003-12-31",
       "birthPlace": {
         "@type": "Place",
@@ -49,13 +51,23 @@
     }
     </script>
 
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f8f8f8; /* Light background */
             color: #333;
+            /* More complex and vibrant background gradient with subtle pattern */
+            background: radial-gradient(circle at top left, #a78bfa, #8b5cf6, #3b82f6, #06b6d4, #14b8a6); /* Purple, blue, cyan, teal */
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zm12 12V8h-2v4h-4v2h4v4h2v-4h4v-2h-4zM0 36v-2h4v-4h2v4h4v2H6v4H4v-4H0zm0-36V0h2v4h4v2H6v4H4V6H0zm12 36v-2h4v-4h2v4h4v2h-4v4h-2v-4h-4zm-6 0v-2H4v-4H2v4H0v2h2v4h2v-4h2zm30 0v-2h4v-4h2v4h4v2h-4v4h-2v-4h-4zM12 0v-2h4v-4h2v4h4v2h-4v4h-2v-4h-4zM24 24v-2h4v-4h2v4h4v2h-4v4h-2v-4h-4zm0 12v-2h4v-4h2v4h4v2h-4v4h-2v-4h-4zM24 0v-2h4v-4h2v4h4v2h-4v4h-2v-4h-4zM48 0v-2h4v-4h2v4h4v2h-4v4h-2v-4h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-attachment: fixed; /* Keeps background fixed during scroll */
+            background-blend-mode: overlay; /* Blends the SVG pattern with the gradient */
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem; /* Increased padding */
         }
         h1, h2, h3 {
             font-family: 'Playfair Display', serif; /* Elegant font for headings */
@@ -71,8 +83,6 @@
             text-align: center;
             position: relative;
             z-index: 1;
-            /* Optional: Add a subtle parallax effect if you want */
-            /* background-attachment: fixed; */ 
         }
         .hero-overlay {
             background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for text readability */
@@ -109,10 +119,65 @@
             background: linear-gradient(to right, #6a11cb, #2575fc);
             border-radius: 2px;
         }
+
+        /* Modal/Lightbox Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* Ensures full image is visible, no cropping */
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        .modal-close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2.5rem;
+            color: white;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 5px 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: background-color 0.2s ease;
+        }
+        .modal-close-btn:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
     </style>
 </head>
 <body>
 
+    <!-- Header/Navigation -->
     <header class="bg-white shadow-md py-4 px-6 fixed w-full z-50">
         <nav class="container mx-auto flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-gray-800 hover:text-purple-600 transition-colors duration-300">DEBARAG DAS</a>
@@ -122,12 +187,14 @@
                 <a href="#music" class="text-gray-600 hover:text-purple-600 transition-colors duration-300">Music & Links</a>
                 <a href="#contact" class="text-gray-600 hover:text-purple-600 transition-colors duration-300">Contact</a>
             </div>
+            <!-- Mobile Menu Button (Hamburger) -->
             <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-purple-600 focus:outline-none">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
         </nav>
+        <!-- Mobile Menu (Hidden by default) -->
         <div id="mobile-menu" class="md:hidden bg-white mt-4 rounded-lg shadow-lg py-2 hidden">
             <a href="#about" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">About Me</a>
             <a href="#gallery" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Gallery</a>
@@ -136,6 +203,7 @@
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero-section text-white relative">
         <div class="hero-overlay"></div>
         <div class="z-10 p-4">
@@ -151,6 +219,7 @@
         </div>
     </section>
 
+    <!-- About Me Section -->
     <section id="about" class="py-16 md:py-24 bg-gray-50">
         <div class="container mx-auto px-4 max-w-4xl text-center">
             <h2 class="text-4xl font-bold text-gray-800 mb-10 section-heading">About DEBARAG DAS</h2>
@@ -176,30 +245,35 @@
         </div>
     </section>
 
+    <!-- Gallery Section -->
     <section id="gallery" class="py-16 md:py-24 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-gray-800 mb-10 text-center section-heading">My Gallery</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                <div class="relative group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <!-- Image 1: Musical Picture (Ukulele) -->
+                <div class="relative group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer gallery-item">
                     <img src="images/musical picture.jpg" alt="Debarag Das playing ukulele" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <p class="text-white text-xl font-semibold">Melody in Hand</p>
                     </div>
                 </div>
-                <div class="relative group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <img src="images/traditional.png" alt="Debarag Das in traditional attire" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                <!-- Image 2: Traditional Attire (FIXED: .png extension) -->
+                <div class="relative group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer gallery-item">
+                    <img src="images/traditional.png" alt="Debarag Das in traditional attire with Rudraksha mala" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <p class="text-white text-xl font-semibold">Vibrant Style</p>
                     </div>
                 </div>
-                <div class="relative group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <!-- Image 3: Profile with Gamosa -->
+                <div class="relative group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer gallery-item">
                     <img src="images/Profile.jpg" alt="Debarag Das with Assamese Gamosa" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <p class="text-white text-xl font-semibold">Cultural Roots</p>
                     </div>
                 </div>
-                <div class="relative group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <img src="images/in nature.jpg" alt="Debarag Das outdoor photoshoot" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                <!-- Image 4: In Nature -->
+                <div class="relative group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer gallery-item">
+                    <img src="images/in nature.jpg" alt="Debarag Das outdoor photoshoot in nature" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <p class="text-white text-xl font-semibold">Nature's Harmony</p>
                     </div>
@@ -208,6 +282,7 @@
         </div>
     </section>
 
+    <!-- Music & Official Links Section -->
     <section id="music" class="py-16 md:py-24 bg-gray-50">
         <div class="container mx-auto px-4 max-w-4xl text-center">
             <h2 class="text-4xl font-bold text-gray-800 mb-10 section-heading">Music & Official Links</h2>
@@ -216,6 +291,7 @@
             </p>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <!-- Spotify -->
                 <a href="https://open.spotify.com/artist/1nzuXaiWbLKTPZit2HByKI?si=eOsUvv4iQn64Ep_hSesG8Q" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
                     <svg class="w-8 h-8 mr-3 text-green-500" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.49 17.51c-.247.405-.733.53-1.138.283-2.614-1.6-5.825-1.99-9.15-.985-.405.123-.81-.123-.933-.528-.123-.405.123-.81.528-.933 3.69-.99 7.37.07 10.37 1.94.405.247.53.733.283 1.138zM18.3 14.22c-.247.405-.733.53-1.138.283-3.08-1.88-7.05-2.37-10.87-1.19-.405.123-.81-.123-.933-.528-.123-.405.123-.81.528-.933 4.2-.99 8.68-.49 11.95 1.48.405.247.53.733.283 1.138zM19.78 11.02c-.247.405-.733.53-1.138.283-3.56-2.17-8.15-2.73-12.72-1.39-.405.123-.81-.123-.933-.528-.123-.405.123-.81.528-.933 4.96-1.48 10.02-1.02 14.07 1.48.405.247.53.733.283 1.138z"/>
@@ -223,6 +299,7 @@
                     <span class="font-semibold text-gray-800">Spotify</span>
                 </a>
 
+                <!-- YouTube Channel -->
                 <a href="https://youtube.com/@debarag_das?si=SScjklKKsD0EuBKD" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
                     <svg class="w-8 h-8 mr-3 text-red-600" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M19.615 3.184c-1.543-.306-4.07-.306-5.772-.306h-.006c-1.702 0-4.229 0-5.771.306C2.92 3.535 2 4.606 2 6.02v11.96c0 1.414.92 2.485 2.066 2.791 1.543.306 4.07.306 5.771.306h.006c1.702 0 4.229 0 5.772-.306 1.146-.306 2.066-1.377 2.066-2.791V6.02c0-1.414-.92-2.485-2.066-2.791zm-9.51 12.094V8.722l5.44 3.27-5.44 3.286z"/>
@@ -230,6 +307,7 @@
                     <span class="font-semibold text-gray-800">Official YouTube</span>
                 </a>
 
+                <!-- Instagram Profile -->
                 <a href="https://www.instagram.com/debarag.das?utm_source=qr&igsh=MTRybXYyanFqMGthbA==" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
                     <svg class="w-8 h-8 mr-3 text-pink-600" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M7.8 2c-2.4 0-4.4 2-4.4 4.4v11.2c0 2.4 2 4.4 4.4 4.4h8.4c2.4 0 4.4-2 4.4-4.4V6.4c0-2.4-2-4.4-4.4-4.4H7.8zm0 2h8.4c1.3 0 2.4 1.1 2.4 2.4v11.2c0 1.3-1.1 2.4-2.4 2.4H7.8c-1.3 0-2.4-1.1-2.4-2.4V6.4c0-1.3 1.1-2.4 2.4-2.4zm8.4 1.4a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 8c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zm0 2c1.1 0 2 0.9 2 2s-0.9 2-2 2-2-0.9-2-2 0.9-2 2-2z"/>
@@ -237,6 +315,7 @@
                     <span class="font-semibold text-gray-800">Instagram Profile</span>
                 </a>
 
+                <!-- Facebook Profile -->
                 <a href="https://www.facebook.com/share/1G3ZeadutA/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
                     <svg class="w-8 h-8 mr-3 text-blue-700" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.505 1.492-3.89 3.776-3.89 1.094 0 2.24.195 2.24.195v2.455H15.83c-1.222 0-1.604.752-1.604 1.53v1.816h2.766l-.443 2.89h-2.323v6.987C18.343 21.128 22 16.991 22 12z"/>
@@ -244,6 +323,7 @@
                     <span class="font-semibold text-gray-800">Facebook Profile</span>
                 </a>
 
+                <!-- Google Knowledge Panel -->
                 <a href="https://g.co/kgs/UkHkg3" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
                     <svg class="w-8 h-8 mr-3 text-red-500" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2c2.21 0 4 1.79 4 4s-1.79 4-4 4-4-1.79-4-4 1.79-4 4-4zm0 14c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
@@ -254,6 +334,7 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact" class="py-16 md:py-24 bg-white">
         <div class="container mx-auto px-4 max-w-2xl text-center">
             <h2 class="text-4xl font-bold text-gray-800 mb-10 section-heading">Get in Touch</h2>
@@ -274,12 +355,21 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8 text-center">
         <div class="container mx-auto px-4">
-            <p>© <span id="current-year"></span> DEBARAG DAS. All rights reserved.</p>
+            <p>&copy; <span id="current-year"></span> DEBARAG DAS. All rights reserved.</p>
             <p class="text-sm mt-2">Designed with passion from Majuli, Assam.</p>
         </div>
     </footer>
+
+    <!-- Image Modal/Lightbox Structure -->
+    <div id="imageModal" class="modal-overlay">
+        <button id="closeModalBtn" class="modal-close-btn">&times;</button>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="Full size image">
+        </div>
+    </div>
 
     <script>
         // Smooth scrolling for navigation links
@@ -303,6 +393,39 @@
 
         // Set current year in footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // --- Image Modal/Lightbox Logic ---
+        const imageModal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const galleryItems = document.querySelectorAll('.gallery-item'); // Select all clickable gallery items
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.querySelector('img').src; // Get the source of the clicked image
+                modalImage.src = imgSrc; // Set the modal image source
+                imageModal.classList.add('active'); // Show the modal
+            });
+        });
+
+        // Close modal when close button is clicked
+        closeModalBtn.addEventListener('click', () => {
+            imageModal.classList.remove('active');
+        });
+
+        // Close modal when clicking outside the image (on the overlay)
+        imageModal.addEventListener('click', (e) => {
+            if (e.target === imageModal) { // Only close if clicked directly on the overlay, not the image itself
+                imageModal.classList.remove('active');
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && imageModal.classList.contains('active')) {
+                imageModal.classList.remove('active');
+            }
+        });
     </script>
 </body>
 </html>
