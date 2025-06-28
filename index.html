@@ -58,16 +58,15 @@
         body {
             font-family: 'Poppins', sans-serif;
             color: #333;
-            /* More complex and vibrant background gradient with subtle pattern */
-            background: radial-gradient(circle at top left, #a78bfa, #8b5cf6, #3b82f6, #06b6d4, #14b8a6); /* Purple, blue, cyan, teal */
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zm12 12V8h-2v4h-4v2h4v4h2v-4h4v-2h-4zM0 36v-2h4v-4h2v4h4v2H6v4H4v-4H0zm0-36V0h2v4h4v2H6v4H4V6H0zm12 36v-2h4v-4h2v4h4v2h-4v4h-2v-4h-4zm-6 0v-2H4v-4H2v4H0v2h2v4h2v-4h2zm30 0v-2h4v-4h2v4h4v2h-4v4h-2v-4h-4zM12 0v-2h4v-4h2v4h4v2h-4v4h-2v-4h-4zM24 24v-2h4v-4h2v4h4v2h-4v4h-2v-4h-4zm0 12v-2h4v-4h2v4h4v2h-4v4h-2v-4h-4zM24 0v-2h4v-4h2v4h4v2h-4v4h-2v-4h-4zM48 0v-2h4v-4h2v4h4v2h-4v4h-2v-4h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            background-attachment: fixed; /* Keeps background fixed during scroll */
-            background-blend-mode: overlay; /* Blends the SVG pattern with the gradient */
+            /* Refined aesthetic background: Smooth radial gradient */
+            background: radial-gradient(circle at center, #e0f2fe, #bfdbfe, #93c5fd, #60a5fa, #3b82f6); /* Lighter, harmonious blues */
+            background-attachment: fixed; /* Keeps background fixed during scroll for subtle parallax */
             min-height: 100vh;
             display: flex;
+            flex-direction: column; /* Allow content to stack vertically */
             align-items: center;
-            justify-content: center;
-            padding: 1.5rem; /* Increased padding */
+            justify-content: flex-start; /* Align content to top */
+            padding-top: 5rem; /* Space for fixed header */
         }
         h1, h2, h3 {
             font-family: 'Playfair Display', serif; /* Elegant font for headings */
@@ -76,13 +75,15 @@
             background-image: url('images/performance.jpg'); /* Your hero image */
             background-size: cover;
             background-position: center;
-            height: 80vh; /* Adjust height as needed */
+            height: 80vh; 
+            width: 100%; /* Ensure it takes full width */
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             position: relative;
             z-index: 1;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Add shadow to hero */
         }
         .hero-overlay {
             background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for text readability */
@@ -221,20 +222,26 @@
 
     <!-- About Me Section -->
     <section id="about" class="py-16 md:py-24 bg-gray-50">
-        <div class="container mx-auto px-4 max-w-4xl text-center">
+        <div class="container mx-auto px-4 max-w-5xl text-center">
             <h2 class="text-4xl font-bold text-gray-800 mb-10 section-heading">About DEBARAG DAS</h2>
-            <div class="flex flex-col md:flex-row items-center gap-10">
-                <div class="md:w-1/2">
-                    <img src="images/portrait.jpg" alt="DEBARAG DAS - Singer from Majuli, Assam" class="rounded-full shadow-xl mx-auto w-64 h-64 object-cover border-4 border-purple-400">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-10">
+                <div class="md:w-1/3 flex-shrink-0">
+                    <!-- Profile Picture - Now clickable -->
+                    <div class="relative group rounded-full overflow-hidden shadow-xl mx-auto w-64 h-64 border-4 border-purple-400 cursor-pointer gallery-item">
+                        <img src="images/portrait.jpg" alt="DEBARAG DAS - Singer from Majuli, Assam" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white text-lg font-semibold">View Full Profile Picture</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="md:w-1/2 text-left">
-                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                <div class="md:w-2/3 text-left">
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
                         DEBARAG DAS (Full Name: Deba Mohan Das) is a passionate independent singer, songwriter, and music composer from Majuli, Assam, a land known for its spiritual heritage and vibrant cultural traditions. Born on 31st December 2003, Debarag carries the soul of Assam into his music, crafting melodies that are heartfelt, emotive, and rooted in personal truth.
                     </p>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
                         Specializing in original compositions, he creates songs that reflect real-life emotions, relationships, and stories—often blending poetic lyricism with expressive vocals. His songwriting captures both the simplicity and depth of human experience, making his work relatable across diverse audiences.
                     </p>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
                         Debarag's artistic style draws from various influences, including Assamese folk, Hindi pop, and contemporary Indian melodies. His vocal delivery is sincere and soulful, often leaving a lasting impression on listeners. Each of his songs is a journey—carefully composed and passionately performed to convey meaning beyond just sound.
                     </p>
                     <p class="text-lg text-gray-700 leading-relaxed">
@@ -292,43 +299,43 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
                 <!-- Spotify -->
-                <a href="https://open.spotify.com/artist/1nzuXaiWbLKTPZit2HByKI?si=eOsUvv4iQn64Ep_hSesG8Q" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-                    <svg class="w-8 h-8 mr-3 text-green-500" fill="currentColor" viewBox="0 0 24 24">
+                <a href="https://open.spotify.com/artist/1nzuXaiWbLKTPZit2HByKI?si=eOsUvv4iQn64Ep_hSesG8Q" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 min-h-[70px]">
+                    <svg class="w-8 h-8 mr-3 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.49 17.51c-.247.405-.733.53-1.138.283-2.614-1.6-5.825-1.99-9.15-.985-.405.123-.81-.123-.933-.528-.123-.405.123-.81.528-.933 3.69-.99 7.37.07 10.37 1.94.405.247.53.733.283 1.138zM18.3 14.22c-.247.405-.733.53-1.138.283-3.08-1.88-7.05-2.37-10.87-1.19-.405.123-.81-.123-.933-.528-.123-.405.123-.81.528-.933 4.2-.99 8.68-.49 11.95 1.48.405.247.53.733.283 1.138zM19.78 11.02c-.247.405-.733.53-1.138.283-3.56-2.17-8.15-2.73-12.72-1.39-.405.123-.81-.123-.933-.528-.123-.405.123-.81.528-.933 4.96-1.48 10.02-1.02 14.07 1.48.405.247.53.733.283 1.138z"/>
                     </svg>
-                    <span class="font-semibold text-gray-800">Spotify</span>
+                    <span class="font-semibold text-gray-800 text-base">Spotify</span>
                 </a>
 
                 <!-- YouTube Channel -->
-                <a href="https://youtube.com/@debarag_das?si=SScjklKKsD0EuBKD" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-                    <svg class="w-8 h-8 mr-3 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                <a href="https://youtube.com/@debarag_das?si=SScjklKKsD0EuBKD" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 min-h-[70px]">
+                    <svg class="w-8 h-8 mr-3 text-red-600 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M19.615 3.184c-1.543-.306-4.07-.306-5.772-.306h-.006c-1.702 0-4.229 0-5.771.306C2.92 3.535 2 4.606 2 6.02v11.96c0 1.414.92 2.485 2.066 2.791 1.543.306 4.07.306 5.771.306h.006c1.702 0 4.229 0 5.772-.306 1.146-.306 2.066-1.377 2.066-2.791V6.02c0-1.414-.92-2.485-2.066-2.791zm-9.51 12.094V8.722l5.44 3.27-5.44 3.286z"/>
                     </svg>
-                    <span class="font-semibold text-gray-800">Official YouTube</span>
+                    <span class="font-semibold text-gray-800 text-base">Official YouTube</span>
                 </a>
 
                 <!-- Instagram Profile -->
-                <a href="https://www.instagram.com/debarag.das?utm_source=qr&igsh=MTRybXYyanFqMGthbA==" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-                    <svg class="w-8 h-8 mr-3 text-pink-600" fill="currentColor" viewBox="0 0 24 24">
+                <a href="https://www.instagram.com/debarag.das?utm_source=qr&igsh=MTRybXYyanFqMGthbA==" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 min-h-[70px]">
+                    <svg class="w-8 h-8 mr-3 text-pink-600 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M7.8 2c-2.4 0-4.4 2-4.4 4.4v11.2c0 2.4 2 4.4 4.4 4.4h8.4c2.4 0 4.4-2 4.4-4.4V6.4c0-2.4-2-4.4-4.4-4.4H7.8zm0 2h8.4c1.3 0 2.4 1.1 2.4 2.4v11.2c0 1.3-1.1 2.4-2.4 2.4H7.8c-1.3 0-2.4-1.1-2.4-2.4V6.4c0-1.3 1.1-2.4 2.4-2.4zm8.4 1.4a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 8c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zm0 2c1.1 0 2 0.9 2 2s-0.9 2-2 2-2-0.9-2-2 0.9-2 2-2z"/>
                     </svg>
-                    <span class="font-semibold text-gray-800">Instagram Profile</span>
+                    <span class="font-semibold text-gray-800 text-base">Instagram Profile</span>
                 </a>
 
                 <!-- Facebook Profile -->
-                <a href="https://www.facebook.com/share/1G3ZeadutA/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-                    <svg class="w-8 h-8 mr-3 text-blue-700" fill="currentColor" viewBox="0 0 24 24">
+                <a href="https://www.facebook.com/share/1G3ZeadutA/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 min-h-[70px]">
+                    <svg class="w-8 h-8 mr-3 text-blue-700 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.505 1.492-3.89 3.776-3.89 1.094 0 2.24.195 2.24.195v2.455H15.83c-1.222 0-1.604.752-1.604 1.53v1.816h2.766l-.443 2.89h-2.323v6.987C18.343 21.128 22 16.991 22 12z"/>
                     </svg>
-                    <span class="font-semibold text-gray-800">Facebook Profile</span>
+                    <span class="font-semibold text-gray-800 text-base">Facebook Profile</span>
                 </a>
 
                 <!-- Google Knowledge Panel -->
-                <a href="https://g.co/kgs/UkHkg3" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-                    <svg class="w-8 h-8 mr-3 text-red-500" fill="currentColor" viewBox="0 0 24 24">
+                <a href="https://g.co/kgs/UkHkg3" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 min-h-[70px]">
+                    <svg class="w-8 h-8 mr-3 text-red-500 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2c2.21 0 4 1.79 4 4s-1.79 4-4 4-4-1.79-4-4 1.79-4 4-4zm0 14c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
                     </svg>
-                    <span class="font-semibold text-gray-800">Google Knowledge Panel</span>
+                    <span class="font-semibold text-gray-800 text-base">Google Knowledge Panel</span>
                 </a>
             </div>
         </div>
