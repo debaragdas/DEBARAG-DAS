@@ -190,7 +190,6 @@
             box-shadow: 0 15px 40px rgba(0,0,0,0.2); 
             border: 6px solid #6a11cb; 
             transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-            /* Removed cursor: pointer; from here as it's not a modal trigger */
         }
         .profile-pic-container:hover {
             transform: scale(1.08) rotate(5deg); 
@@ -292,6 +291,30 @@
             transform: rotate(180deg) scale(1.1); 
             color: #fff;
         }
+        /* Style for share buttons in the new share section */
+        .share-button-group a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px; /* Fixed width for consistent circles */
+            height: 60px; /* Fixed height for consistent circles */
+            border-radius: 50%; /* Circular buttons */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .share-button-group a:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        .share-button-group img {
+            width: 32px; /* Icon size */
+            height: 32px; /* Icon size */
+        }
+        /* Specific colors for social icons */
+        .share-facebook { background-color: #1877F2; }
+        .share-whatsapp { background-color: #25D366; }
+        .share-telegram { background-color: #0088CC; }
+        .share-x { background-color: #000000; } /* X (Twitter) is black */
     </style>
 </head>
 <body>
@@ -376,7 +399,7 @@
                 <h3 class="text-3xl font-semibold text-purple-700 mb-6">"Rod aji keni pau - Cover Song"</h3>
                 <!-- Spotify Embed for Track: https://open.spotify.com/track/3XoU51xxhY3Fje7naz3HU1?si=DVofzT_hRf-u4V2aLklUeQ -->
                 <div class="w-full max-w-2xl aspect-video bg-gray-200 flex items-center justify-center text-gray-600 text-lg rounded-lg overflow-hidden">
-                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3XoU51xxhY3Fje7naz3HU1?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3XoU51xxhY3Fje7naz3HU1?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" loading="lazy"></iframe>
                 </div>
                 <p class="text-lg text-gray-700 mt-6">Listen to "Rod aji keni pau - Cover Song," available now on Spotify and all major streaming platforms!</p>
                 <a href="https://open.spotify.com/track/3XoU51xxhY3Fje7naz3HU1?si=DVofzT_hRf-u4V2aLklUeQ" target="_blank" rel="noopener noreferrer" class="btn-primary text-white font-semibold py-3 px-8 text-base focus:outline-none focus:ring-4 focus:ring-purple-300 mt-6">
@@ -391,11 +414,11 @@
                     <h4 class="text-xl font-semibold mb-3">Mashup: "Bihuwan Mashup 2024"</h4>
                     <!-- Spotify Embed for Album: https://open.spotify.com/album/5R7xS2gARczREmvFy8Vhjt?si=Xd8vFfGpTrKmQvA0ioGsSA -->
                     <div class="w-full aspect-video bg-gray-200 flex items-center justify-center text-gray-600 rounded-lg overflow-hidden mb-4">
-                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/5R7xS2gARczREmvFy8Vhjt?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/5R7xS2gARczREmvFy8Vhjt?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" loading="lazy"></iframe>
                     </div>
-                    <a href="https://open.spotify.com/album/5R7xS2gARczREmvFy8Vhjt?si=Xd8vFfGpTrKmQvA0ioGsSA" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center btn-primary py-2 px-6 rounded-full text-sm mt-2 font-semibold">
+                    <a href="https://open.spotify.com/album/5R7xS2gARczREmvFy8Vhjt?si=Xd8vFfGpTrKmQvA0ioGsSA" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center btn-primary py-2 px-6 rounded-full text-sm mt-2 font-semibold text-white">
                         <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.49 17.51c-.247.405-.733.53-1.138.283-2.614-1.6-5.825-1.99-9.15-.985-.405.123-.81-.123-.933-.528-.123-.405.123-.81.528-.933 3.69-.99 7.37.07 10.37 1.94.405.247.53.733.283 1.138zM18.3 14.22c-.247.405-.733.53-1.138.283-3.08-1.88-7.05-2.37-10.87-1.19-.405.123-.81-.123-.933-.528-.123-.405.123-.81.528-.933 4.2-.99 8.68-.49 11.95 1.48.405.247.53.733.283 1.138zM19.78 11.02c-.247.405-.733.53-1.138.283-3.56-2.17-8.15-2.73-12.72-1.39-.405.123-.81-.123-.933-.528-.123-.405.123-.81.528-.933 4.96-1.48 10.02-1.02 14.07 1.48.405.247.53.733.283 1.138z"/></svg>
-                        Spotify
+                        <span class="ml-1">Play on Spotify</span>
                     </a>
                 </div>
                 <!-- Music Item 2: Folk Song - Shankar Guru Amare (JioSaavn) - Custom card with image and direct link -->
@@ -410,7 +433,7 @@
                     </a>
                     <a href="https://www.saavn.com/s/song/assamese/shankar-guru-amare/shankar-guru-amare/PScJQxtbTgo" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center btn-primary py-2 px-6 rounded-full text-sm mt-2 font-semibold bg-yellow-500 text-black hover:bg-yellow-600 transition-colors duration-200">
                         <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.49 17.51c-.247.405-.733.53-1.138.283-2.614-1.6-5.825-1.99-9.15-.985-.405.123-.81-.123-.933-.528-.123-.405.123-.81.528-.933 3.69-.99 7.37.07 10.37 1.94.405.247.53.733.283 1.138zM18.3 14.22c-.247.405-.733.53-1.138.283-3.08-1.88-7.05-2.37-10.87-1.19-.405.123-.81-.123-.933-.528-.123-.405.123-.81.528-.933 4.2-.99 8.68-.49 11.95 1.48.405.247.53.733.283 1.138zM19.78 11.02c-.247.405-.733.53-1.138.283-3.56-2.17-8.15-2.73-12.72-1.39-.405.123-.81-.123-.933-.528-.123-.405.123-.81.528-.933 4.96-1.48 10.02-1.02 14.07 1.48.405.247.53.733.283 1.138z"/></svg>
-                        JioSaavn
+                        <span class="ml-1">Play on JioSaavn</span>
                     </a>
                 </div>
                 <!-- Music Item 3: Kimanor Nasoni (Spotify Album) -->
@@ -418,11 +441,11 @@
                     <h4 class="text-xl font-semibold mb-3">Original Bihu Song: "Kimanor Nasoni"</h4>
                     <!-- Spotify Embed for Album: https://open.spotify.com/album/43W7t8czhPhmCiGvuQ3rT6?si=saRYxmosQs2iE9LoK0OEvQ -->
                     <div class="w-full aspect-video bg-gray-200 flex items-center justify-center text-gray-600 rounded-lg overflow-hidden mb-4">
-                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/43W7t8czhPhmCiGvuQ3rT6?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/43W7t8czhPhmCiGvuQ3rT6?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" loading="lazy"></iframe>
                     </div>
-                    <a href="https://open.spotify.com/album/43W7t8czhPhmCiGvuQ3rT6?si=saRYxmosQs2iE9LoK0OEvQ" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center btn-primary py-2 px-6 rounded-full text-sm mt-2 font-semibold">
+                    <a href="https://open.spotify.com/album/43W7t8czhPhmCiGvuQ3rT6?si=saRYxmosQs2iE9LoK0OEvQ" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center btn-primary py-2 px-6 rounded-full text-sm mt-2 font-semibold text-white">
                         <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.49 17.51c-.247.405-.733.53-1.138.283-2.614-1.6-5.825-1.99-9.15-.985-.405.123-.81-.123-.933-.528-.123-.405.123-.81.528-.933 3.69-.99 7.37.07 10.37 1.94.405.247.53.733.283 1.138zM18.3 14.22c-.247.405-.733.53-1.138.283-3.08-1.88-7.05-2.37-10.87-1.19-.405.123-.81-.123-.933-.528-.123-.405.123-.81.528-.933 4.2-.99 8.68-.49 11.95 1.48.405.247.53.733.283 1.138zM19.78 11.02c-.247.405-.733.53-1.138.283-3.56-2.17-8.15-2.73-12.72-1.39-.405.123-.81-.123-.933-.528-.123-.405.123-.81.528-.933 4.96-1.48 10.02-1.02 14.07 1.48.405.247.53.733.283 1.138z"/></svg>
-                        Spotify
+                        <span class="ml-1">Play on Spotify</span>
                     </a>
                 </div>
             </div>
@@ -434,25 +457,31 @@
         <div class="container mx-auto px-4 max-w-5xl text-center">
             <h2 class="text-4xl font-bold text-gray-800 mb-10 section-heading">Videos</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Video 1: O Pujari Adori - Tribute (Thumbnail Preview) -->
+                <!-- Video 1: O Pujari Adori - Tribute (Thumbnail Preview & Direct Link) -->
                 <div class="card p-4 video-item cursor-pointer" data-youtubeid="LnjeA02lVKE">
                     <h3 class="text-xl font-semibold mb-4">Tribute: "O Pujari Adori"</h3>
-                    <div class="w-full aspect-video bg-gray-200 rounded-lg overflow-hidden shadow-md relative group">
+                    <a href="https://youtu.be/LnjeA02lVKE" target="_blank" rel="noopener noreferrer" class="w-full aspect-video bg-gray-200 rounded-lg overflow-hidden shadow-md relative group">
                         <img src="https://img.youtube.com/vi/LnjeA02lVKE/hqdefault.jpg" alt="O Pujari Adori video thumbnail" loading="lazy" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
                         <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                         </div>
-                    </div>
+                    </a>
+                    <a href="https://youtu.be/LnjeA02lVKE" target="_blank" rel="noopener noreferrer" class="btn-primary text-white font-semibold py-2 px-6 text-sm mt-4">
+                        Watch on YouTube
+                    </a>
                 </div>
-                <!-- Video 2: KIMANOR NASONI - Official Lyrical Bihu Song (Thumbnail Preview) -->
+                <!-- Video 2: KIMANOR NASONI - Official Lyrical Bihu Song (Thumbnail Preview & Direct Link) -->
                 <div class="card p-4 video-item cursor-pointer" data-youtubeid="0fYFvdRfN7s">
                     <h3 class="text-xl font-semibold mb-4">Official Lyrical Bihu Song: "KIMANOR NASONI"</h3>
-                    <div class="w-full aspect-video bg-gray-200 rounded-lg overflow-hidden shadow-md relative group">
+                    <a href="https://youtu.be/0fYFvdRfN7s" target="_blank" rel="noopener noreferrer" class="w-full aspect-video bg-gray-200 rounded-lg overflow-hidden shadow-md relative group">
                         <img src="https://img.youtube.com/vi/0fYFvdRfN7s/hqdefault.jpg" alt="KIMANOR NASONI video thumbnail" loading="lazy" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
                         <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                         </div>
-                    </div>
+                    </a>
+                    <a href="https://youtu.be/0fYFvdRfN7s" target="_blank" rel="noopener noreferrer" class="btn-primary text-white font-semibold py-2 px-6 text-sm mt-4">
+                        Watch on YouTube
+                    </a>
                 </div>
                 <!-- Add more videos as needed -->
             </div>
@@ -478,15 +507,15 @@
                     <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <span class="text-white text-lg font-semibold">View Photo</span>
                     </div>
-                    <p class="text-sm text-gray-600 mt-2 p-2">Embracing traditional Assamese attire.</p>
+                    <p class="text-sm text-gray-600 mt-2 p-2">Embracing traditional attire with Rudraksha mala.</p>
                 </div>
                 <!-- Image 3: Profile with Gamosa -->
                 <div class="relative group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer card gallery-item gallery-stagger-3">
-                    <img src="images/Profile.jpg" alt="Debarag Das with Assamese Gamosa" loading="lazy" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <img src="images/Profile.jpg" alt="Debarag Das with traditional attire" loading="lazy" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <span class="text-white text-lg font-semibold">View Photo</span>
                     </div>
-                    <p class="text-sm text-gray-600 mt-2 p-2">Proudly showcasing the Assamese Gamosa.</p>
+                    <p class="text-sm text-gray-600 mt-2 p-2">Proudly showcasing traditional attire.</p>
                 </div>
                 <!-- Image 4: In Nature -->
                 <div class="relative group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer card gallery-item gallery-stagger-4">
@@ -573,6 +602,36 @@
         </div>
     </section>
 
+    <!-- NEW: Share My Website Section -->
+    <section id="share-website" class="py-16 md:py-24 bg-gray-50 w-full animate-on-scroll">
+        <div class="container mx-auto px-4 max-w-3xl text-center">
+            <h2 class="text-4xl font-bold text-gray-800 mb-10 section-heading">Share My Website</h2>
+            <p class="text-lg text-gray-700 mb-8">
+                Help spread the music! Share my official website with your friends and family.
+            </p>
+            <button id="main-share-btn" class="btn-primary text-white font-semibold py-4 px-12 text-lg focus:outline-none focus:ring-4 focus:ring-purple-300">
+                Share Now!
+            </button>
+
+            <div id="share-buttons-container" class="mt-12 flex flex-wrap justify-center gap-6 hidden">
+                <a href="#" target="_blank" class="share-facebook share-button-group" title="Share on Facebook">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+                </a>
+                <a href="#" target="_blank" class="share-whatsapp share-button-group" title="Share on WhatsApp">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+                </a>
+                <a href="#" target="_blank" class="share-telegram share-button-group" title="Share on Telegram">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
+                </a>
+                <a href="#" target="_blank" class="share-x share-button-group" title="Share on X (Twitter)">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/X_logo_2023.svg/2048px-X_logo_2023.svg.png" alt="X (Twitter)">
+                </a>
+                <!-- Add more social platforms as needed -->
+            </div>
+        </div>
+    </section>
+
+
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8 text-center w-full">
         <div class="container mx-auto px-4">
@@ -586,7 +645,7 @@
         </div>
     </footer>
 
-    <!-- Image Modal/Lightbox Structure -->
+    <!-- Image Modal/Lightbox Structure (for Photo Gallery only) -->
     <div id="imageModal" class="modal-overlay">
         <button id="closeModalBtn" class="modal-close-btn">×</button>
         <div class="modal-content">
@@ -598,13 +657,9 @@
         </div>
     </div>
 
-    <!-- Video Modal Structure -->
-    <div id="videoModal" class="modal-overlay">
-        <button id="closeVideoModalBtn" class="modal-close-btn">×</button>
-        <div class="modal-content">
-            <iframe id="modalVideoPlayer" width="800" height="450" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-    </div>
+    <!-- Video Modal Structure (REMOVED - now direct YouTube link) -->
+    <!-- The modal for videos is removed as per request to directly link to YouTube app -->
+
 
     <script>
         // Set current year in footer
@@ -667,6 +722,7 @@
         const closeModalBtn = document.getElementById('closeModalBtn');
         const prevImageBtn = document.getElementById('prevImageBtn');
         const nextImageBtn = document.getElementById('nextImageBtn');
+        
         // Select only gallery items for modal functionality
         const galleryItems = document.querySelectorAll('#gallery .gallery-item'); 
         let currentGalleryIndex = 0;
@@ -729,36 +785,32 @@
             }
         });
 
+        // --- Share Button Logic ---
+        const mainShareBtn = document.getElementById('main-share-btn');
+        const shareButtonsContainer = document.getElementById('share-buttons-container');
+        const websiteURL = encodeURIComponent("https://debaragdas.github.io/DEBARAG-DAS/"); // Your actual website URL
 
-        // --- Video Modal Logic ---
-        const videoModal = document.getElementById('videoModal');
-        const modalVideoPlayer = document.getElementById('modalVideoPlayer');
-        const closeVideoModalBtn = document.getElementById('closeVideoModalBtn');
-        const videoItems = document.querySelectorAll('.video-item'); // Select all clickable video items
-
-        videoItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const youtubeId = item.dataset.youtubeid; // Get YouTube ID from data attribute
-                modalVideoPlayer.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1`;
-                videoModal.classList.add('active');
+        mainShareBtn.addEventListener('click', () => {
+            shareButtonsContainer.classList.toggle('hidden');
+            // Update share links when opened
+            shareButtonsContainer.querySelectorAll('a').forEach(link => {
+                let href = link.href;
+                if (href.includes("facebook.com")) {
+                    link.href = `https://www.facebook.com/sharer/sharer.php?u=${websiteURL}`;
+                } else if (href.includes("whatsapp.com")) {
+                    link.href = `https://api.whatsapp.com/send?text=Check%20out%20DEBARAG%20DAS%20Official%20Website!%20${websiteURL}`;
+                } else if (href.includes("t.me")) {
+                    link.href = `https://t.me/share/url?url=${websiteURL}&text=Check%20out%20DEBARAG%20DAS%20Official%20Website!`;
+                } else if (href.includes("twitter.com") || href.includes("x.com")) { // Handle X (Twitter)
+                    link.href = `https://twitter.com/intent/tweet?text=Check%20out%20DEBARAG%20DAS%20Official%20Website!&url=${websiteURL}&hashtags=DebaragDas,AssameseSinger`;
+                }
             });
         });
 
-        closeVideoModalBtn.addEventListener('click', () => {
-            modalVideoPlayer.src = ''; // Stop video playback
-            videoModal.classList.remove('active');
-        });
-
-        videoModal.addEventListener('click', (e) => { // Close when clicking overlay
-            if (e.target === videoModal) { 
-                modalVideoPlayer.src = ''; // Stop video playback
-                videoModal.classList.remove('active');
-            }
-        });
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && videoModal.classList.contains('active')) {
-                modalVideoPlayer.src = ''; // Stop video playback
-                videoModal.classList.remove('active');
+        // Close share options if click outside
+        document.addEventListener('click', (e) => {
+            if (!mainShareBtn.contains(e.target) && !shareButtonsContainer.contains(e.target)) {
+                shareButtonsContainer.classList.add('hidden');
             }
         });
     </script>
