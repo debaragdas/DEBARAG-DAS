@@ -458,7 +458,7 @@
         <div class="container mx-auto px-4 max-w-5xl text-center">
             <h2 class="text-4xl font-bold text-gray-800 mb-10 section-heading">Videos</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Video 1: O Pujari Adori - Tribute (Thumbnail Preview & Direct Link) -->
+                <!-- Video 1: O Pujari Adori - Tribute (Thumbnail Preview & Direct Link to YouTube) -->
                 <div class="card p-4">
                     <h3 class="text-xl font-semibold mb-4">Tribute: "O Pujari Adori"</h3>
                     <a href="https://youtu.be/LnjeA02lVKE" target="_blank" rel="noopener noreferrer" class="w-full aspect-video bg-gray-200 rounded-lg overflow-hidden shadow-md relative group">
@@ -471,7 +471,7 @@
                         Watch on YouTube
                     </a>
                 </div>
-                <!-- Video 2: KIMANOR NASONI - Official Lyrical Bihu Song (Thumbnail Preview & Direct Link) -->
+                <!-- Video 2: KIMANOR NASONI - Official Lyrical Bihu Song (Thumbnail Preview & Direct Link to YouTube) -->
                 <div class="card p-4">
                     <h3 class="text-xl font-semibold mb-4">Official Lyrical Bihu Song: "KIMANOR NASONI"</h3>
                     <a href="https://youtu.be/0fYFvdRfN7s" target="_blank" rel="noopener noreferrer" class="w-full aspect-video bg-gray-200 rounded-lg overflow-hidden shadow-md relative group">
@@ -654,10 +654,6 @@
         </div>
     </div>
 
-    <!-- Video Modal Structure (REMOVED - now direct YouTube link) -->
-    <!-- The modal for videos is removed as per request to directly link to YouTube app -->
-
-
     <script>
         // Set current year in footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
@@ -761,9 +757,10 @@
             openImageModal(imgData.src, imgData.alt, imgData.caption);
         }
 
-        closeModalBtn.addEventListener('click', closeImageModal);
-        prevImageBtn.addEventListener('click', (e) => { e.stopPropagation(); navigateGallery(-1); });
-        nextImageBtn.addEventListener('click', (e) => { e.stopPropagation(); navigateGallery(1); });
+        // Attach event listeners for modal navigation and close only if elements exist
+        if (closeModalBtn) closeModalBtn.addEventListener('click', closeImageModal);
+        if (prevImageBtn) prevImageBtn.addEventListener('click', (e) => { e.stopPropagation(); navigateGallery(-1); });
+        if (nextImageBtn) nextImageBtn.addEventListener('click', (e) => { e.stopPropagation(); navigateGallery(1); });
 
         imageModal.addEventListener('click', (e) => { // Close when clicking overlay
             if (e.target === imageModal) { // Only close if clicked directly on the overlay, not its children
