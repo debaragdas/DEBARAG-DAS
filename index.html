@@ -66,8 +66,8 @@
         body {
             font-family: 'Montserrat', sans-serif;
             color: #333;
-            /* New: Soft, artistic, animated background */
-            background: radial-gradient(circle at center, #f0f9ff, #e0f2fe, #bfdbfe, #93c5fd, #60a5fa); /* Soft blues gradient */
+            /* Soft, artistic, animated background */
+            background: radial-gradient(circle at center, #f8f8f8, #e0f2fe, #bfdbfe, #93c5fd, #60a5fa); /* Soft blues gradient */
             background-image: 
                 url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zm12 12V8h-2v4h-4v2h4v4h2v-4h4v-2h-4zM0 36v-2h4v-4h2v4h4v2H6v4H4v-4H0zm0-36V0h2v4h4v2H6v4H4V6H0zm12 36v-2h4v-4h2v4h4v2h-4v4h-2v-4h-4zm-6 0v-2H4v-4H2v4H0v2h2v4h2v-4h2zm30 0v-2h4v-4h2v4h4v2h-4v4h-2v-4h-4zM12 0v-2h4v-4h2v4h4v2h-4v4h-2v-4h-4zM24 24v-2h4v-4h2v4h4v2h-4v4h-2v-4h-4zm0 12v-2h4v-4h2v4h4v2h-4v4h-2v-4h-4zM24 0v-2h4v-4h2v4h4v2h-4v4h-2v-4h-4zM48 0v-2h4v-4h2v4h4v2h-4v4h-2v-4h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
             background-blend-mode: overlay, normal;
@@ -87,11 +87,18 @@
             100% { background-size: 120% 120%, 70px 70px; }
         }
 
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif; /* Consistent elegant font for all headings */
-        }
         h1 {
-            text-shadow: 0 0 15px rgba(255,255,255,0.9), 0 0 25px rgba(0,0,0,0.2); /* Soft white glow */
+            font-family: 'Playfair Display', serif; /* Elegant font for main heading */
+            /* Refined shiny text effect */
+            text-shadow: 
+                0 0 10px rgba(255, 255, 255, 0.9), /* Stronger white core */
+                0 0 20px rgba(255, 100, 200, 0.7), /* Pinkish glow */
+                0 0 30px rgba(100, 200, 255, 0.7), /* Bluish glow */
+                0 0 40px rgba(255, 255, 255, 0.5); /* Fainter outer glow */
+        }
+
+        h2, h3 {
+            font-family: 'Playfair Display', serif; /* Consistent elegant font for other headings */
         }
         .hero-section {
             background-image: url('images/performance.jpg'); 
@@ -105,7 +112,7 @@
             text-align: center;
             position: relative;
             z-index: 1;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5); 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5); /* Deeper shadow for hero */
             filter: grayscale(20%) brightness(80%); /* Artistic filter */
             transition: filter 0.5s ease-in-out, background-position 60s linear infinite alternate; /* Pan animation */
         }
@@ -130,7 +137,7 @@
             transition: all 0.3s ease-in-out;
             background-size: 200% auto;
             box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-            border-radius: 9999px; 
+            border-radius: 9999px; /* Fully rounded */
         }
         .btn-primary:hover {
             background-position: right center;
@@ -173,7 +180,7 @@
             border-radius: 1rem; 
         }
 
-        /* Profile Picture specific styling - Unique Shape */
+        /* Profile Picture specific styling - Unique Shape & Hover */
         .profile-pic-container {
             width: 256px; /* w-64 */
             height: 256px; /* h-64 */
@@ -183,17 +190,19 @@
             box-shadow: 0 15px 40px rgba(0,0,0,0.2); 
             border: 6px solid #6a11cb; 
             transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: pointer; /* Indicate it's clickable */
         }
         .profile-pic-container:hover {
-            transform: scale(1.05) rotate(5deg); 
+            transform: scale(1.08) rotate(5deg); /* More pronounced scale and rotate on hover */
             box-shadow: 0 25px 60px rgba(0,0,0,0.3);
         }
 
-        /* Staggered Gallery Items */
+        /* Staggered Gallery Items (for visual appeal, not strict grid) */
         .gallery-stagger-1 { margin-top: 20px; }
         .gallery-stagger-2 { margin-top: -20px; }
         .gallery-stagger-3 { margin-top: 10px; }
-        /* Add more classes for more items if needed */
+        .gallery-stagger-4 { margin-top: -10px; }
+
 
         /* Modal/Lightbox Styles */
         .modal-overlay {
@@ -264,11 +273,11 @@
             <h2 class="text-4xl font-bold text-gray-800 mb-10 section-heading">About DEBARAG DAS</h2>
             <div class="flex flex-col md:flex-row items-center justify-center md:gap-16">
                 <div class="md:w-1/3 flex-shrink-0 mb-8 md:mb-0">
-                    <!-- Profile Picture - Unique Shape & Clickable -->
-                    <div class="relative group mx-auto w-64 h-64 profile-pic-container cursor-pointer gallery-item">
+                    <!-- Profile Picture - Unique Shape & Clickable (no modal) -->
+                    <div class="relative group mx-auto w-64 h-64 profile-pic-container cursor-pointer">
                         <img src="images/portrait.jpg" alt="DEBARAG DAS - Singer from Majuli, Assam" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
                         <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="text-white text-lg font-semibold">View Profile Pic</span>
+                            <span class="text-white text-lg font-semibold">My Profile</span>
                         </div>
                     </div>
                 </div>
@@ -375,28 +384,28 @@
             <h2 class="text-4xl font-bold text-gray-800 mb-10 section-heading">Photo Gallery</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                 <!-- Image 1: Musical Picture (Ukulele) -->
-                <div class="relative group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer card gallery-item">
+                <div class="relative group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer card gallery-item gallery-stagger-1">
                     <img src="images/musical picture.jpg" alt="Debarag Das playing ukulele" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <span class="text-white text-lg font-semibold">View Photo</span>
                     </div>
                 </div>
                 <!-- Image 2: Traditional Attire -->
-                <div class="relative group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer card gallery-item">
+                <div class="relative group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer card gallery-item gallery-stagger-2">
                     <img src="images/traditional.png" alt="Debarag Das in traditional attire with Rudraksha mala" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <span class="text-white text-lg font-semibold">View Photo</span>
                     </div>
                 </div>
                 <!-- Image 3: Profile with Gamosa -->
-                <div class="relative group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer card gallery-item">
+                <div class="relative group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer card gallery-item gallery-stagger-3">
                     <img src="images/Profile.jpg" alt="Debarag Das with Assamese Gamosa" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <span class="text-white text-lg font-semibold">View Photo</span>
                     </div>
                 </div>
                 <!-- Image 4: In Nature -->
-                <div class="relative group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer card gallery-item">
+                <div class="relative group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer card gallery-item gallery-stagger-4">
                     <img src="images/in nature.jpg" alt="Debarag Das outdoor photoshoot in nature" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <span class="text-white text-lg font-semibold">View Photo</span>
@@ -523,19 +532,20 @@
         // Set current year in footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        // --- Image Modal/Lightbox Logic ---
+        // --- Image Modal/Lightbox Logic (Only for Gallery Items) ---
         const imageModal = document.getElementById('imageModal');
         const modalImage = document.getElementById('modalImage');
         const closeModalBtn = document.getElementById('closeModalBtn');
-        const galleryItems = document.querySelectorAll('.gallery-item'); // Select all clickable gallery items
+        // Select only gallery items for modal functionality
+        const galleryItems = document.querySelectorAll('#gallery .gallery-item'); 
 
         galleryItems.forEach(item => {
             item.addEventListener('click', () => {
                 const imgElement = item.querySelector('img');
-                if (imgElement) { // Ensure an image exists within the clicked item
-                    modalImage.src = imgElement.src; // Set the modal image source
-                    modalImage.alt = imgElement.alt; // Set alt text for accessibility
-                    imageModal.classList.add('active'); // Show the modal
+                if (imgElement) { 
+                    modalImage.src = imgElement.src; 
+                    modalImage.alt = imgElement.alt; 
+                    imageModal.classList.add('active'); 
                 }
             });
         });
