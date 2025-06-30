@@ -89,12 +89,12 @@
 
         h1 {
             font-family: 'Playfair Display', serif; /* Elegant font for main heading */
-            /* Refined shiny text effect */
+            /* Refined shiny text effect: White with subtle pink/blue glow */
             text-shadow: 
-                0 0 10px rgba(255, 255, 255, 0.9), /* Stronger white core */
-                0 0 20px rgba(255, 100, 200, 0.7), /* Pinkish glow */
-                0 0 30px rgba(100, 200, 255, 0.7), /* Bluish glow */
-                0 0 40px rgba(255, 255, 255, 0.5); /* Fainter outer glow */
+                0 0 10px rgba(255, 255, 255, 1), /* Bright white core */
+                0 0 20px rgba(255, 150, 200, 0.8), /* Soft pink glow */
+                0 0 30px rgba(150, 200, 255, 0.8), /* Soft blue glow */
+                0 0 40px rgba(255, 255, 255, 0.6); /* Fainter outer white glow */
         }
 
         h2, h3 {
@@ -190,7 +190,7 @@
             box-shadow: 0 15px 40px rgba(0,0,0,0.2); 
             border: 6px solid #6a11cb; 
             transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-            cursor: pointer; /* Indicate it's clickable */
+            /* Removed cursor: pointer; and hover text as it's no longer a modal trigger */
         }
         .profile-pic-container:hover {
             transform: scale(1.08) rotate(5deg); /* More pronounced scale and rotate on hover */
@@ -256,7 +256,7 @@
         <div class="hero-overlay"></div>
         <div class="z-10 p-4 max-w-4xl">
             <h1 class="text-5xl md:text-8xl font-bold mb-4 leading-tight">
-                <span class="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-orange-500">DEBARAG DAS</span>
+                <span class="text-white">DEBARAG DAS</span>
             </h1>
             <p class="text-xl md:text-3xl font-light mb-8">
                 Independent Singer, Songwriter & Music Producer from Majuli, Assam
@@ -276,9 +276,7 @@
                     <!-- Profile Picture - Unique Shape & Clickable (no modal) -->
                     <div class="relative group mx-auto w-64 h-64 profile-pic-container cursor-pointer">
                         <img src="images/portrait.jpg" alt="DEBARAG DAS - Singer from Majuli, Assam" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="text-white text-lg font-semibold">My Profile</span>
-                        </div>
+                        <!-- Removed text overlay for profile pic -->
                     </div>
                 </div>
                 <div class="md:w-2/3 text-left max-w-prose mx-auto">
