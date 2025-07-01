@@ -8,18 +8,16 @@
     <meta name="keywords" content="Debarag Das, Deba Mohan Das, Assamese singer, Indian singer, music producer, songwriter, music composer, independent artist, Majuli Assam, Assamese music, Assamese folk, Hindi pop, contemporary Indian melodies, official website, music artist, performer, Guwahati, musical journey, new music, Assamese song, Zubeen Garg, singing, music production, Indian music, folk music, pop music, music industry, artist profile, music artist Assam, best Assamese singer, modern Assamese songs">
     <meta name="author" content="DEBARAG DAS">
 
-    <!-- Favicon - A simple 'DD' icon for Debarag Das -->
     <link rel="icon" href="https://placehold.co/32x32/6A11CB/FFFFFF?text=DD" type="image/png"> 
 
-    <!-- Schema Markup (JSON-LD) for SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": ["Person", "MusicArtist"],
       "name": "DEBARAG DAS",
       "alternateName": "Deba Mohan Das",
-      "url": "https://debaragdas.github.io/DEBARAG-DAS/", // IMPORTANT: Update with your actual live URL.
-      "image": "images/portrait.jpg", // Your profile picture
+      "url": "https://debaragdas.github.io/DEBARAG-DAS/",
+      "image": "images/portrait.jpg",
       "birthDate": "2003-12-31",
       "birthPlace": {
         "@type": "Place",
@@ -59,7 +57,6 @@
     }
     </script>
 
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -316,11 +313,24 @@
         .share-telegram { background-color: #0088CC; }
         .share-x { background-color: #000000; } /* X (Twitter) is black */
         .share-x img { filter: invert(1); } /* Make X logo white */
+
+        /* Custom Aspect Ratio for Video Thumbnails */
+        .aspect-ratio-4-3 {
+            position: relative;
+            width: 100%;
+            padding-bottom: 75%; /* 4:3 Aspect Ratio (3 / 4 * 100%) */
+        }
+        .aspect-ratio-4-3 > *:first-child {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Header/Navigation -->
     <header class="bg-white shadow-lg py-4 px-6 fixed w-full z-50 opacity-95" style="backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 2px solid rgba(106, 17, 203, 0.3);">
         <nav class="container mx-auto flex justify-between items-center">
             <a href="#" class="text-2xl md:text-3xl font-bold text-gray-800 hover:text-purple-700 transition-colors duration-300">DEBARAG DAS</a>
@@ -332,14 +342,12 @@
                 <a href="#links" class="text-gray-700 hover:text-purple-700 font-semibold transition-colors duration-300">Links</a>
                 <a href="#contact" class="text-gray-700 hover:text-purple-700 font-semibold transition-colors duration-300">Contact</a>
             </div>
-            <!-- Mobile Menu Button (Hamburger) -->
             <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-purple-700 focus:outline-none">
                 <svg class="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
         </nav>
-        <!-- Mobile Menu (Hidden by default) -->
         <div id="mobile-menu" class="md:hidden bg-white mt-4 rounded-lg shadow-lg py-2 hidden absolute w-full left-0">
             <a href="#about" class="block px-4 py-3 text-gray-800 hover:bg-gray-100 font-medium">About DEBARAG DAS</a>
             <a href="#music" class="block px-4 py-3 text-gray-800 hover:bg-gray-100 font-medium">Music</a>
@@ -350,7 +358,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero-section text-white relative">
         <div class="hero-overlay"></div>
         <div class="z-10 p-4 max-w-4xl">
@@ -366,13 +373,11 @@
         </div>
     </section>
 
-    <!-- About Me Section -->
     <section id="about" class="py-16 md:py-24 bg-white w-full animate-on-scroll">
         <div class="container mx-auto px-4 max-w-5xl text-center">
             <h2 class="text-4xl font-bold text-gray-800 mb-10 section-heading">About DEBARAG DAS</h2>
             <div class="flex flex-col md:flex-row items-center justify-center md:gap-16">
                 <div class="md:w-1/3 flex-shrink-0 mb-8 md:mb-0">
-                    <!-- Profile Picture - Unique Shape & Hover (no modal) -->
                     <div class="relative group mx-auto w-64 h-64 profile-pic-container">
                         <img src="images/portrait.jpg" alt="DEBARAG DAS - Singer from Majuli, Assam" loading="lazy" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
                     </div>
@@ -392,13 +397,11 @@
         </div>
     </section>
 
-    <!-- Featured Music / Latest Release -->
     <section id="music" class="py-16 md:py-24 bg-gray-50 w-full animate-on-scroll">
         <div class="container mx-auto px-4 max-w-5xl text-center">
             <h2 class="text-4xl font-bold text-gray-800 mb-10 section-heading">Featured Music & Latest Release</h2>
             <div class="card p-6 md:p-8 mb-12 flex flex-col items-center">
                 <h3 class="text-3xl font-semibold text-purple-700 mb-6">"Rod aji keni pau - Cover Song"</h3>
-                <!-- Spotify Embed for Track: https://open.spotify.com/track/3XoU51xxhY3Fje7naz3HU1?si=DVofzT_hRf-u4V2aLklUeQ -->
                 <div class="w-full max-w-2xl aspect-video bg-gray-200 flex items-center justify-center text-gray-600 text-lg rounded-lg overflow-hidden">
                     <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3XoU51xxhY3Fje7naz3HU1?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" loading="lazy"></iframe>
                 </div>
@@ -410,10 +413,8 @@
 
             <h3 class="text-3xl font-bold text-gray-800 mb-8">Discography</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Music Item 1: Mashup - Bihuwan Mashup 2024 -->
                 <div class="card p-5 flex flex-col items-center">
                     <h4 class="text-xl font-semibold mb-3">Mashup: "Bihuwan Mashup 2024"</h4>
-                    <!-- Spotify Embed for Album: https://open.spotify.com/album/5R7xS2gARczREmvFy8Vhjt?si=Xd8vFfGpTrKmQvA0ioGsSA -->
                     <div class="w-full aspect-video bg-gray-200 flex items-center justify-center text-gray-600 rounded-lg overflow-hidden mb-4">
                         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/5R7xS2gARczREmvFy8Vhjt?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" loading="lazy"></iframe>
                     </div>
@@ -422,10 +423,8 @@
                         <span class="ml-1">Play on Spotify</span>
                     </a>
                 </div>
-                <!-- Music Item 2: Folk Song - Shankar Guru Amare (JioSaavn) - Custom card with image and direct link -->
                 <div class="card p-5 flex flex-col items-center">
                     <h4 class="text-xl font-semibold mb-3">Folk Song: "Shankar Guru Amare"</h4>
-                    <!-- Custom visual for JioSaavn link with shankar guru.jpg image -->
                     <a href="https://www.saavn.com/s/song/assamese/shankar-guru-amare/shankar-guru-amare/PScJQxtbTgo" target="_blank" rel="noopener noreferrer" class="w-full h-36 flex items-center justify-center text-gray-600 rounded-lg overflow-hidden mb-4 relative group">
                         <img src="images/shankar guru.jpg" alt="Shankar Guru Amare - Album Cover" loading="lazy" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
                         <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -437,10 +436,8 @@
                         <span class="ml-1">Play on JioSaavn</span>
                     </a>
                 </div>
-                <!-- Music Item 3: Kimanor Nasoni (Spotify Album) -->
                 <div class="card p-5 flex flex-col items-center">
                     <h4 class="text-xl font-semibold mb-3">Original Bihu Song: "Kimanor Nasoni"</h4>
-                    <!-- Spotify Embed for Album: https://open.spotify.com/album/43W7t8czhPhmCiGvuQ3rT6?si=saRYxmosQs2iE9LoK0OEvQ -->
                     <div class="w-full aspect-video bg-gray-200 flex items-center justify-center text-gray-600 rounded-lg overflow-hidden mb-4">
                         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/43W7t8czhPhmCiGvuQ3rT6?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" loading="lazy"></iframe>
                     </div>
@@ -453,15 +450,13 @@
         </div>
     </section>
 
-    <!-- Video Gallery Section -->
     <section id="videos" class="py-16 md:py-24 bg-white w-full animate-on-scroll">
         <div class="container mx-auto px-4 max-w-5xl text-center">
             <h2 class="text-4xl font-bold text-gray-800 mb-10 section-heading">Videos</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Video 1: O Pujari Adori - Tribute (Thumbnail Preview & Direct Link to YouTube) -->
                 <div class="card p-4">
                     <h3 class="text-xl font-semibold mb-4">Tribute: "O Pujari Adori"</h3>
-                    <a href="https://youtu.be/LnjeA02lVKE" target="_blank" rel="noopener noreferrer" class="w-full aspect-w-4 aspect-h-3 bg-gray-200 rounded-lg overflow-hidden shadow-md relative group">
+                    <a href="https://youtu.be/LnjeA02lVKE" target="_blank" rel="noopener noreferrer" class="w-full aspect-ratio-4-3 bg-gray-200 rounded-lg overflow-hidden shadow-md relative group">
                         <img src="https://img.youtube.com/vi/LnjeA02lVKE/hqdefault.jpg" alt="O Pujari Adori video thumbnail" loading="lazy" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
                         <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -471,10 +466,9 @@
                         Watch on YouTube
                     </a>
                 </div>
-                <!-- Video 2: KIMANOR NASONI - Official Lyrical Bihu Song (Thumbnail Preview & Direct Link to YouTube) -->
                 <div class="card p-4">
                     <h3 class="text-xl font-semibold mb-4">Official Lyrical Bihu Song: "KIMANOR NASONI"</h3>
-                    <a href="https://youtu.be/0fYFvdRfN7s" target="_blank" rel="noopener noreferrer" class="w-full aspect-w-4 aspect-h-3 bg-gray-200 rounded-lg overflow-hidden shadow-md relative group">
+                    <a href="https://youtu.be/0fYFvdRfN7s" target="_blank" rel="noopener noreferrer" class="w-full aspect-ratio-4-3 bg-gray-200 rounded-lg overflow-hidden shadow-md relative group">
                         <img src="https://img.youtube.com/vi/0fYFvdRfN7s/hqdefault.jpg" alt="KIMANOR NASONI video thumbnail" loading="lazy" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
                         <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -484,17 +478,14 @@
                         Watch on YouTube
                     </a>
                 </div>
-                <!-- Add more videos as needed -->
-            </div>
+                </div>
         </div>
     </section>
 
-    <!-- Photo Gallery Section -->
     <section id="gallery" class="py-16 md:py-24 bg-gray-50 w-full animate-on-scroll">
         <div class="container mx-auto px-4 max-w-5xl text-center">
             <h2 class="text-4xl font-bold text-gray-800 mb-10 section-heading">Photo Gallery</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                <!-- Image 1: Musical Picture (Ukulele) -->
                 <div class="relative group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer card gallery-item gallery-stagger-1">
                     <img src="images/musical picture.jpg" alt="Debarag Das playing ukulele" loading="lazy" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -502,7 +493,6 @@
                     </div>
                     <p class="text-sm text-gray-600 mt-2 p-2">Playing the ukulele during a session.</p>
                 </div>
-                <!-- Image 2: Traditional Attire -->
                 <div class="relative group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer card gallery-item gallery-stagger-2">
                     <img src="images/traditional.png" alt="Debarag Das in traditional attire with Rudraksha mala" loading="lazy" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -510,7 +500,6 @@
                     </div>
                     <p class="text-sm text-gray-600 mt-2 p-2">Embracing traditional attire with Rudraksha mala.</p>
                 </div>
-                <!-- Image 3: Profile with Gamosa -->
                 <div class="relative group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer card gallery-item gallery-stagger-3">
                     <img src="images/Profile.jpg" alt="Debarag Das with traditional attire" loading="lazy" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -518,7 +507,6 @@
                     </div>
                     <p class="text-sm text-gray-600 mt-2 p-2">Proudly showcasing traditional attire.</p>
                 </div>
-                <!-- Image 4: In Nature -->
                 <div class="relative group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer card gallery-item gallery-stagger-4">
                     <img src="images/in nature.jpg" alt="Debarag Das outdoor photoshoot in nature" loading="lazy" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -530,7 +518,6 @@
         </div>
     </section>
 
-    <!-- Official Links Section -->
     <section id="links" class="py-16 md:py-24 bg-white w-full animate-on-scroll">
         <div class="container mx-auto px-4 max-w-4xl text-center">
             <h2 class="text-4xl font-bold text-gray-800 mb-10 section-heading">Connect & Stream</h2>
@@ -539,7 +526,6 @@
             </p>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-                <!-- Spotify -->
                 <a href="https://open.spotify.com/artist/1nzuXaiWbLKTPZit2HByKI?si=eOsUvv4iQn64Ep_hSesG8Q" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-4 bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 min-h-[70px] group">
                     <svg class="w-8 h-8 mr-3 text-green-500 flex-shrink-0 transition-colors duration-200 group-hover:text-green-600" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.49 17.51c-.247.405-.733.53-1.138.283-2.614-1.6-5.825-1.99-9.15-.985-.405.123-.81-.123-.933-.528-.123-.405.123-.81.528-.933 3.69-.99 7.37.07 10.37 1.94.405.247.53.733.283 1.138zM18.3 14.22c-.247.405-.733.53-1.138.283-3.08-1.88-7.05-2.37-10.87-1.19-.405.123-.81-.123-.933-.528-.123-.405.123-.81.528-.933 4.2-.99 8.68-.49 11.95 1.48.405.247.53.733.283 1.138zM19.78 11.02c-.247.405-.733.53-1.138.283-3.56-2.17-8.15-2.73-12.72-1.39-.405.123-.81-.123-.933-.528-.123-.405.123-.81.528-.933 4.96-1.48 10.02-1.02 14.07 1.48.405.247.53.733.283 1.138z"/>
@@ -547,7 +533,6 @@
                     <span class="font-semibold text-gray-800 text-base group-hover:text-gray-900 transition-colors duration-200">Spotify</span>
                 </a>
 
-                <!-- YouTube Channel -->
                 <a href="https://youtube.com/@debarag_das?si=SScjklKKsD0EuBKD" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-4 bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 min-h-[70px] group">
                     <svg class="w-8 h-8 mr-3 text-red-600 flex-shrink-0 transition-colors duration-200 group-hover:text-red-700" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M19.615 3.184c-1.543-.306-4.07-.306-5.772-.306h-.006c-1.702 0-4.229 0-5.771.306C2.92 3.535 2 4.606 2 6.02v11.96c0 1.414.92 2.485 2.066 2.791 1.543.306 4.07.306 5.771.306h.006c1.702 0 4.229 0 5.772-.306 1.146-.306 2.066-1.377 2.066-2.791V6.02c0-1.414-.92-2.485-2.066-2.791zm-9.51 12.094V8.722l5.44 3.27-5.44 3.286z"/>
@@ -555,7 +540,6 @@
                     <span class="font-semibold text-gray-800 text-base group-hover:text-gray-900 transition-colors duration-200">Official YouTube</span>
                 </a>
 
-                <!-- Instagram Profile -->
                 <a href="https://www.instagram.com/debarag.das?utm_source=qr&igsh=MTRybXYyanFqMGthbA==" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-4 bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 min-h-[70px] group">
                     <svg class="w-8 h-8 mr-3 text-pink-600 flex-shrink-0 transition-colors duration-200 group-hover:text-pink-700" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M7.8 2c-2.4 0-4.4 2-4.4 4.4v11.2c0 2.4 2 4.4 4.4 4.4h8.4c2.4 0 4.4-2 4.4-4.4V6.4c0-2.4-2-4.4-4.4-4.4H7.8zm0 2h8.4c1.3 0 2.4 1.1 2.4 2.4v11.2c0 1.3-1.1 2.4-2.4 2.4H7.8c-1.3 0-2.4-1.1-2.4-2.4V6.4c0-1.3 1.1-2.4 2.4-2.4zm8.4 1.4a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8zM12 8c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zm0 2c1.1 0 2 0.9 2 2s-0.9 2-2 2-2-0.9-2-2 0.9-2 2-2z"/>
@@ -563,7 +547,6 @@
                     <span class="font-semibold text-gray-800 text-base group-hover:text-gray-900 transition-colors duration-200">Instagram Profile</span>
                 </a>
 
-                <!-- Facebook Profile -->
                 <a href="https://www.facebook.com/share/1G3ZeadutA/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-4 bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 min-h-[70px] group">
                     <svg class="w-8 h-8 mr-3 text-blue-700 flex-shrink-0 transition-colors duration-200 group-hover:text-blue-800" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.505 1.492-3.89 3.776-3.89 1.094 0 2.24.195 2.24.195v2.455H15.83c-1.222 0-1.604.752-1.604 1.53v1.816h2.766l-.443 2.89h-2.323v6.987C18.343 21.128 22 16.991 22 12z"/>
@@ -571,7 +554,6 @@
                     <span class="font-semibold text-gray-800 text-base group-hover:text-gray-900 transition-colors duration-200">Facebook Profile</span>
                 </a>
 
-                <!-- Google Knowledge Panel -->
                 <a href="https://g.co/kgs/UkHkg3" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-4 bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 min-h-[70px] group">
                     <svg class="w-8 h-8 mr-3 text-red-500 flex-shrink-0 transition-colors duration-200 group-hover:text-red-600" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2c2.21 0 4 1.79 4 4s-1.79 4-4 4-4-1.79-4-4 1.79-4 4-4zm0 14c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
@@ -582,7 +564,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="py-16 md:py-24 bg-gray-100 w-full animate-on-scroll">
         <div class="container mx-auto px-4 max-w-3xl text-center">
             <h2 class="text-4xl font-bold text-gray-800 mb-10 section-heading">Get in Touch</h2>
@@ -603,7 +584,6 @@
         </div>
     </section>
 
-    <!-- NEW: Share My Website Section -->
     <section id="share-website" class="py-16 md:py-24 bg-gray-50 w-full animate-on-scroll">
         <div class="container mx-auto px-4 max-w-3xl text-center">
             <h2 class="text-4xl font-bold text-gray-800 mb-10 section-heading">SHARE</h2>
@@ -623,34 +603,29 @@
                 <a href="#" target="_blank" class="share-x text-white" title="Share on X (Twitter)">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/X_logo_2023.svg/2048px-X_logo_2023.svg.png" alt="X (Twitter)">
                 </a>
-                <!-- Add more social platforms as needed -->
-            </div>
+                </div>
         </div>
     </section>
 
 
-    <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8 text-center w-full">
         <div class="container mx-auto px-4">
-            <!-- DEBAWAVES Production Brand -->
             <div class="mb-4">
                 <img src="images/my production logo.png" alt="DEBAWAVES Production Logo" class="h-24 mx-auto mb-2"> 
                 <p class="text-lg font-semibold text-gray-200">A DEBAWAVES Production</p>
             </div>
-            <p>&copy; <span id="current-year"></span> DEBARAG DAS. All rights reserved.</p>
+            <p>© <span id="current-year"></span> DEBARAG DAS. All rights reserved.</p>
             <p class="text-sm mt-2">Designed with passion from Majuli, Assam.</p>
         </div>
     </footer>
 
-    <!-- Image Modal/Lightbox Structure (for Photo Gallery only) -->
     <div id="imageModal" class="modal-overlay">
         <button id="closeModalBtn" class="modal-close-btn">×</button>
         <div class="modal-content">
             <img id="modalImage" src="" alt=""> 
             <p id="modalCaption" class="text-white text-base mt-4"></p>
-            <!-- Navigation arrows for gallery modal -->
-            <button id="prevImageBtn" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-5xl bg-black bg-opacity-30 p-2 rounded-full cursor-pointer hover:bg-opacity-50 transition-colors duration-200 z-50">&#10094;</button>
-            <button id="nextImageBtn" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-5xl bg-black bg-opacity-30 p-2 rounded-full cursor-pointer hover:bg-opacity-50 transition-colors duration-200 z-50">&#10095;</button>
+            <button id="prevImageBtn" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-5xl bg-black bg-opacity-30 p-2 rounded-full cursor-pointer hover:bg-opacity-50 transition-colors duration-200 z-50">❮</button>
+            <button id="nextImageBtn" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-5xl bg-black bg-opacity-30 p-2 rounded-full cursor-pointer hover:bg-opacity-50 transition-colors duration-200 z-50">❯</button>
         </div>
     </div>
 
@@ -672,19 +647,21 @@
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
-                const headerOffset = document.querySelector('header').offsetHeight; // Height of fixed header
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                if (targetElement) {
+                    const headerOffset = document.querySelector('header').offsetHeight; // Height of fixed header
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
 
-                // Close mobile menu after clicking a link
-                if (mobileMenu.classList.contains('active')) { // Check if active, not just hidden
-                    mobileMenu.classList.remove('active');
-                    mobileMenu.classList.add('hidden');
+                    // Close mobile menu after clicking a link
+                    if (mobileMenu.classList.contains('active')) { // Check if active, not just hidden
+                        mobileMenu.classList.remove('active');
+                        mobileMenu.classList.add('hidden');
+                    }
                 }
             });
         });
@@ -715,20 +692,22 @@
         const closeModalBtn = document.getElementById('closeModalBtn');
         const prevImageBtn = document.getElementById('prevImageBtn');
         const nextImageBtn = document.getElementById('nextImageBtn');
-        
-        // Select only gallery items for modal functionality
-        const galleryItems = document.querySelectorAll('#gallery .gallery-item'); 
-        let currentGalleryIndex = 0;
-        const galleryImages = []; // To store image sources and alts for navigation
 
-        // Populate galleryImages array and add click listeners
+        const galleryItems = document.querySelectorAll('#gallery .gallery-item');
+        let currentGalleryIndex = 0;
+        const galleryImages = [];
+
         galleryItems.forEach((item, index) => {
             const imgElement = item.querySelector('img');
             if (imgElement) {
-                galleryImages.push({ src: imgElement.src, alt: imgElement.alt, caption: item.querySelector('p') ? item.querySelector('p').textContent : '' });
+                galleryImages.push({
+                    src: imgElement.src,
+                    alt: imgElement.alt,
+                    caption: item.querySelector('p') ? item.querySelector('p').textContent : ''
+                });
                 item.addEventListener('click', () => {
                     currentGalleryIndex = index;
-                    openImageModal(imgElement.src, imgElement.alt, galleryImages[index].caption); 
+                    openImageModal(galleryImages[index].src, galleryImages[index].alt, galleryImages[index].caption);
                 });
             }
         });
@@ -738,21 +717,10 @@
             modalImage.alt = alt;
             modalCaption.textContent = caption;
             imageModal.classList.add('active');
-            // Attach event listeners for navigation and close only when modal is active
-            // Check if buttons exist before attaching listeners
-            if (closeModalBtn) closeModalBtn.addEventListener('click', closeImageModal);
-            if (prevImageBtn) prevImageBtn.addEventListener('click', (e) => { e.stopPropagation(); navigateGallery(-1); });
-            if (nextImageBtn) nextImageBtn.addEventListener('click', (e) => { e.stopPropagation(); navigateGallery(1); });
         }
 
         function closeImageModal() {
             imageModal.classList.remove('active');
-            modalImage.src = ''; // Clear image
-            modalCaption.textContent = ''; // Clear caption
-            // Remove event listeners when modal is closed to prevent memory leaks/double-attachments
-            if (closeModalBtn) closeModalBtn.removeEventListener('click', closeImageModal);
-            if (prevImageBtn) prevImageBtn.removeEventListener('click', (e) => { e.stopPropagation(); navigateGallery(-1); });
-            if (nextImageBtn) nextImageBtn.removeEventListener('click', (e) => { e.stopPropagation(); navigateGallery(1); });
         }
 
         function navigateGallery(direction) {
@@ -766,8 +734,17 @@
             openImageModal(imgData.src, imgData.alt, imgData.caption);
         }
 
-        imageModal.addEventListener('click', (e) => { // Close when clicking overlay
-            if (e.target === imageModal) { // Only close if clicked directly on the overlay, not its children
+        closeModalBtn.addEventListener('click', closeImageModal);
+        prevImageBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navigateGallery(-1);
+        });
+        nextImageBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navigateGallery(1);
+        });
+        imageModal.addEventListener('click', (e) => {
+            if (e.target === imageModal) {
                 closeImageModal();
             }
         });
@@ -784,36 +761,26 @@
         });
 
         // --- Share Button Logic ---
-        const mainShareBtn = document.getElementById('main-share-btn');
-        const shareButtonsContainer = document.getElementById('share-buttons-container');
-        // IMPORTANT: This is the correct way to get your live GitHub Pages URL for sharing.
-        // It uses window.location.origin + window.location.pathname to get the base URL.
-        const websiteURL = encodeURIComponent("https://debaragdas.github.io/DEBARAG-DAS/"); 
+        const websiteURL = encodeURIComponent("https://debaragdas.github.io/DEBARAG-DAS/");
+        const shareText = encodeURIComponent("Check out DEBARAG DAS's Official Website and amazing music!");
 
-        mainShareBtn.addEventListener('click', () => {
-            shareButtonsContainer.classList.toggle('hidden');
-            // Update share links when opened
-            shareButtonsContainer.querySelectorAll('a').forEach(link => {
-                let platform = link.title.toLowerCase();
-                let shareText = encodeURIComponent("Check out DEBARAG DAS's Official Website and amazing music!");
-                
-                if (platform.includes("facebook")) {
-                    link.href = `https://www.facebook.com/sharer/sharer.php?u=${websiteURL}&quote=${shareText}`;
-                } else if (platform.includes("whatsapp")) {
-                    link.href = `https://api.whatsapp.com/send?text=${shareText}%20${websiteURL}`;
-                } else if (platform.includes("telegram")) {
-                    link.href = `https://t.me/share/url?url=${websiteURL}&text=${shareText}`;
-                } else if (platform.includes("x (twitter)")) { 
-                    link.href = `https://twitter.com/intent/tweet?text=${shareText}&url=${websiteURL}&hashtags=DebaragDas,AssameseSinger`;
-                }
-            });
-        });
+        const shareLinks = document.querySelectorAll('.share-button-group a');
 
-        // Close share options if click outside
-        document.addEventListener('click', (e) => {
-            if (!mainShareBtn.contains(e.target) && !shareButtonsContainer.contains(e.target)) {
-                shareButtonsContainer.classList.add('hidden');
+        shareLinks.forEach(link => {
+            const platform = link.title.toLowerCase();
+            let url = '';
+
+            if (platform.includes("facebook")) {
+                url = `https://www.facebook.com/sharer/sharer.php?u=${websiteURL}&quote=${shareText}`;
+            } else if (platform.includes("whatsapp")) {
+                url = `https://api.whatsapp.com/send?text=${shareText}%20${websiteURL}`;
+            } else if (platform.includes("telegram")) {
+                url = `https://t.me/share/url?url=${websiteURL}&text=${shareText}`;
+            } else if (platform.includes("x (twitter)")) {
+                url = `https://twitter.com/intent/tweet?text=${shareText}&url=${websiteURL}&hashtags=DebaragDas,AssameseSinger`;
             }
+
+            link.href = url;
         });
     </script>
 </body>
