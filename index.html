@@ -613,16 +613,16 @@
                 Help spread the music! Share my official website with your friends and family on your favorite platforms.
             </p>
             <div class="flex flex-wrap justify-center gap-6 share-button-group">
-                <a href="#" target="_blank" class="share-facebook text-white" title="Share on Facebook">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdebaragdas.github.io%2FDEBARAG-DAS%2F&quote=Check%20out%20DEBARAG%20DAS%27s%20Official%20Website%20and%20amazing%20music%21" target="_blank" class="share-facebook text-white" title="Share on Facebook">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
                 </a>
-                <a href="#" target="_blank" class="share-whatsapp text-white" title="Share on WhatsApp">
+                <a href="https://api.whatsapp.com/send?text=Check%20out%20DEBARAG%20DAS%27s%20Official%20Website%20and%20amazing%20music%21%20https%3A%2F%2Fdebaragdas.github.io%2FDEBARAG-DAS%2F" target="_blank" class="share-whatsapp text-white" title="Share on WhatsApp">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
                 </a>
-                <a href="#" target="_blank" class="share-telegram text-white" title="Share on Telegram">
+                <a href="https://t.me/share/url?url=https%3A%2F%2Fdebaragdas.github.io%2FDEBARAG-DAS%2F&text=Check%20out%20DEBARAG%20DAS%27s%20Official%20Website%20and%20amazing%20music%21" target="_blank" class="share-telegram text-white" title="Share on Telegram">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
                 </a>
-                <a href="#" target="_blank" class="share-x text-white" title="Share on X (Twitter)">
+                <a href="https://twitter.com/intent/tweet?text=Check%20out%20DEBARAG%20DAS%27s%20Official%20Website%20and%20amazing%20music%21&url=https%3A%2F%2Fdebaragdas.github.io%2FDEBARAG-DAS%2F&hashtags=DebaragDas,AssameseSinger" target="_blank" class="share-x text-white" title="Share on X (Twitter)">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/X_logo_2023.svg/2048px-X_logo_2023.svg.png" alt="X (Twitter)">
                 </a>
                 <!-- Add more social platforms as needed -->
@@ -741,7 +741,6 @@
             modalCaption.textContent = caption;
             imageModal.classList.add('active');
             // Attach event listeners for navigation and close only when modal is active
-            // Check if buttons exist before attaching listeners
             if (closeModalBtn) closeModalBtn.addEventListener('click', closeImageModal);
             if (prevImageBtn) prevImageBtn.addEventListener('click', (e) => { e.stopPropagation(); navigateGallery(-1); });
             if (nextImageBtn) nextImageBtn.addEventListener('click', (e) => { e.stopPropagation(); navigateGallery(1); });
