@@ -402,17 +402,11 @@
         <div class="container mx-auto px-4 max-w-5xl text-center">
             <h2 class="text-4xl font-bold text-gray-800 mb-10 section-heading">Featured Music & Latest Release</h2>
             
-            <!-- This container will be filled automatically by JavaScript -->
-            <div id="latest-release-container" class="mb-12">
-                <!-- Loading spinner or placeholder can go here -->
-            </div>
+            <div id="latest-release-container" class="mb-12"></div>
 
             <h3 class="text-3xl font-bold text-gray-800 mb-8">Discography</h3>
             
-            <!-- This grid will be filled automatically by JavaScript -->
-            <div id="discography-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Loading spinner or placeholder can go here -->
-            </div>
+            <div id="discography-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
         </div>
     </section>
 
@@ -420,21 +414,8 @@
     <section id="videos" class="py-16 md:py-24 bg-white w-full">
         <div class="container mx-auto px-4 max-w-5xl text-center">
             <h2 class="text-4xl font-bold text-gray-800 mb-10 section-heading">Videos</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Video 1: O Pujari Adori - Tribute -->
-                <div class="card p-4">
-                    <h3 class="text-xl font-semibold mb-4">Tribute: "O Pujari Adori"</h3>
-                    <div class="w-full aspect-video bg-gray-200 rounded-lg overflow-hidden shadow-md">
-                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/LnjeA02lVKE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <!-- Video 2: KIMANOR NASONI - Official Lyrical Bihu Song -->
-                <div class="card p-4">
-                    <h3 class="text-xl font-semibold mb-4">Official Lyrical Bihu Song: "KIMANOR NASONI"</h3>
-                    <div class="w-full aspect-video bg-gray-200 rounded-lg overflow-hidden shadow-md">
-                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/0fYFvdRfN7s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                </div>
+            <div id="videos-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Videos will be loaded here by JavaScript -->
             </div>
         </div>
     </section>
@@ -602,37 +583,40 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // --- SCRIPT TO LOAD MUSIC DYNAMICALLY ---
+            // --- SCRIPT TO LOAD DYNAMIC CONTENT ---
+
+            // Load Music
             fetch('./music-data.json')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
+                .then(response => response.json())
                 .then(data => {
                     const songs = data.songs;
                     if (songs && songs.length > 0) {
                         const latestRelease = songs[0];
                         const discography = songs.slice(1);
-
-                        const latestReleaseContainer = document.getElementById('latest-release-container');
-                        const discographyGrid = document.getElementById('discography-grid');
-
-                        // --- Create Latest Release Section ---
-                        if (latestRelease) {
-                            latestReleaseContainer.innerHTML = createSongCard(latestRelease, true);
-                        }
-
-                        // --- Create Discography Section ---
-                        discographyGrid.innerHTML = discography.map(song => createSongCard(song, false)).join('');
+                        document.getElementById('latest-release-container').innerHTML = createSongCard(latestRelease, true);
+                        document.getElementById('discography-grid').innerHTML = discography.map(song => createSongCard(song, false)).join('');
                     }
                 })
                 .catch(error => {
-                    console.error('Error fetching or parsing music data:', error);
-                    const musicSection = document.getElementById('music');
-                    musicSection.innerHTML = '<p class="text-center text-red-500">Could not load music at this time. Please try again later.</p>';
+                    console.error('Error loading music data:', error);
+                    document.getElementById('music').innerHTML = '<p class="text-center text-red-500">Could not load music at this time.</p>';
                 });
+
+            // Load Videos
+            fetch('./videos-data.json')
+                .then(response => response.json())
+                .then(data => {
+                    const videos = data.videos;
+                    const videosGrid = document.getElementById('videos-grid');
+                    if (videos && videos.length > 0) {
+                        videosGrid.innerHTML = videos.map(video => createVideoCard(video)).join('');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading video data:', error);
+                    document.getElementById('videos-grid').innerHTML = '<p class="text-center text-red-500">Could not load videos at this time.</p>';
+                });
+
 
             function createSongCard(song, isLatest) {
                 let cardContent = '';
@@ -685,6 +669,17 @@
                     `;
                 }
                 return '';
+            }
+
+            function createVideoCard(video) {
+                return `
+                    <div class="card p-4">
+                        <h3 class="text-xl font-semibold mb-4">${video.title}</h3>
+                        <div class="w-full aspect-video bg-gray-200 rounded-lg overflow-hidden shadow-md">
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/${video.youtubeId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                `;
             }
 
             // --- Set current year in footer ---
