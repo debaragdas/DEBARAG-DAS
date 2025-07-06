@@ -1,0 +1,31 @@
+{
+  "songs": [
+    {
+      "title": "Rod aji keni pau - Cover Song",
+      "platform": "spotify",
+      "type": "track",
+      "id": "3XoU51xxhY3Fje7naz3HU1",
+      "streamUrl": "https://open.spotify.com/track/3XoU51xxhY3Fje7naz3HU1"
+    },
+    {
+      "title": "Mashup: \"Bihuwan Mashup 2024\"",
+      "platform": "spotify",
+      "type": "album",
+      "id": "5R7xS2gARczREmvFy8Vhjt",
+      "streamUrl": "https://open.spotify.com/album/5R7xS2gARczREmvFy8Vhjt"
+    },
+    {
+      "title": "Folk Song: \"Shankar Guru Amare\"",
+      "platform": "jiosaavn",
+      "imageUrl": "images/shankar guru.jpg",
+      "streamUrl": "https://www.saavn.com/s/song/assamese/shankar-guru-amare/shankar-guru-amare/PScJQxtbTgo"
+    },
+    {
+      "title": "Original Bihu Song: \"Kimanor Nasoni\"",
+      "platform": "spotify",
+      "type": "album",
+      "id": "43W7t8czhPhmCiGvuQ3rT6",
+      "streamUrl": "https://open.spotify.com/album/43W7t8czhPhmCiGvuQ3rT6"
+    }
+  ]
+}
